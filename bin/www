@@ -1,0 +1,10 @@
+// this will be our application entry, where our server is setup
+const http = require('http');
+const app = require('../app'); // this is the express app we just made
+
+const port = parseInt(process.env.PORT, 10) || 8000;
+app.set('port', port);
+
+const server = http.createServer(app);
+server.listen(port);
+
